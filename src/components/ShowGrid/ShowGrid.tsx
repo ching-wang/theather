@@ -1,33 +1,57 @@
-import React from "react";
-import { Show } from "../../types";
+import React, { useEffect, useState } from "react";
+import { SearchResult, Show } from "../../types";
+import { useSearchQuery } from "../../context/SearchQueryContext";
+import { apiGet } from "../../api/api";
+import { Link } from "react-router-dom";
 
-// searchResult
+export const ShowGrid = () => {
+  const { searchState } = useSearchQuery();
+  const [shows, setShows] = useState<Array<Show>>([]);
 
-export const ShowGrid = ({ shows }: { shows: Show[] }) => {
+  useEffect(() => {
+    const query = String(searchState.query || "").trim();
+    if (query) {
+      apiGet(`/search/shows?q=${query}`).then((requestShows) => {
+        console.log("requested shows", requestShows);
+        setShows(
+          requestShows.map((searchResult: SearchResult) => searchResult.show)
+        );
+      });
+    } else {
+      apiGet("shows").then((shows) => {
+        setShows(shows.slice(0, 5));
+      });
+    }
+  }, [searchState.query]);
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "100%",
-        justifyContent: "center",
-      }}
-    >
-      <h1> TODAY's SHOWS </h1>
-      {shows.map((show) => (
-        <div
-          key={show.id}
-          style={{
-            width: "100px",
-            background: "salmon",
-            margin: "2px",
-            padding: "10px",
-          }}
-        >
-          {show.name}
-        </div>
-      ))}
-    </div>
+    <>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          justifyContent: "center",
+        }}
+      >
+        <h1> SHOWS </h1>
+        {searchState.query ? <h2>{searchState.query}</h2> : null}
+        {shows.map((show) => (
+          <Link
+            key={show.id}
+            to={`/show/${show.id}`}
+            style={{
+              width: "100px",
+              background: "salmon",
+              margin: "2px",
+              padding: "10px",
+            }}
+          >
+            {show.name}
+          </Link>
+        ))}
+      </div>
+    </>
   );
 };
 

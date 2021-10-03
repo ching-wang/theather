@@ -1,16 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchBox from "../../components/SearchBox/SearchBox";
-import { InputHandler } from "../../types";
 
-export const Header = ({
-  handleSearchChange,
-}: {
-  handleSearchChange: InputHandler;
-}) => {
+export const Header = () => {
   return (
     <div style={{ background: "black", color: "white", width: "100%" }}>
-      <h1>Header</h1>
-      <SearchBox handleSearchChange={handleSearchChange} />
+      <Link to="/">
+          <h1>Header</h1>
+      </Link>
+      <SearchBox />
     </div>
   );
 };

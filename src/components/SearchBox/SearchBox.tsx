@@ -1,20 +1,33 @@
-import React from "react";
-import { InputHandler } from "../../types";
+import React, { useMemo } from "react";
+import { ReactChangeEvent } from "../../types";
+import { debounce } from "lodash";
+import { useSearchQuery } from "../../context/SearchQueryContext";
+import {withRouter} from 'react-router-dom'
 
-export const SearchBox = ({
-  handleSearchChange,
-}: {
-  handleSearchChange: InputHandler;
-}) => {
+export const SearchBox = () => {
+  const { searchState, dispatchSearch } = useSearchQuery();
+
+  const handleSearchChange = (event: ReactChangeEvent): void => {
+    event.persist();
+    const query = event?.target?.value || "";
+    dispatchSearch({ query });
+  };
+
+  const debouncedChangeHandler = useMemo(
+    () => debounce(handleSearchChange, 300),
+    []
+  );
+
   return (
     <div>
       <input
         type="search"
-        onChange={handleSearchChange}
+        defaultValue={searchState.query}
+        onChange={debouncedChangeHandler}
         placeholder="Search for a TV show"
       />
     </div>
   );
 };
 
-export default SearchBox;
+export default withRouter(SearchBox);
