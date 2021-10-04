@@ -3,7 +3,7 @@ import MainPage from "../MainPage/MainPage";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Header from "../Header/Header";
-import ShowDetail from "../../components/ShowDetail/ShowDetail";
+import ShowDetail from "../ShowDetail/ShowDetail";
 import { Container } from "./app.styles";
 
 function App() {

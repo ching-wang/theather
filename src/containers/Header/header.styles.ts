@@ -18,5 +18,5 @@ export const HeaderWrapper = styled.div`
 
 export const CompanyName = styled.h1`
     color: white;
-    font-size: 4rem;
+    font-size: 3.8rem;
 `

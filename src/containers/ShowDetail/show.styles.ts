@@ -77,18 +77,19 @@ export const Content = styled.div`
 
 export const ShowName = styled.p`
   font-size: 4rem;
-  color: purple;
+  color: ${theme.palette.purple}
 `;
 
 export const Title = styled.h2`
   font-size: 2rem;
-  color: blue;
+  color: ${theme.palette.purple};
   text-align: left;
 `;
 
 // Episode
 export const EpisodeWrapper = styled.div`
   padding: 2px;
+  margin: auto 5px;
 `;
 
 export const EpisodeName = styled.p`

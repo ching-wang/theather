@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {SearchBox} from "../../components/SearchBox/SearchBox";
+import {SearchBox} from "../SearchBox/SearchBox";
 import {CompanyName, HeaderWrapper} from "./header.styles";
 
 export const Header = () => {
