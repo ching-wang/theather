@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBox from "../../components/SearchBox/SearchBox";
+import {SearchBox} from "../../components/SearchBox/SearchBox";
+import {CompanyName, HeaderWrapper} from "./header.styles";
 
 export const Header = () => {
   return (
-    <div style={{ background: "black", color: "white", width: "100%" }}>
+    <HeaderWrapper>
       <Link to="/">
-          <h1>Header</h1>
+          <CompanyName>
+              Theatre
+          </CompanyName>
       </Link>
       <SearchBox />
-    </div>
+    </HeaderWrapper>
   );
 };
 
