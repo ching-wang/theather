@@ -16,7 +16,7 @@ const SeasonDetail = ({ season }: { season: Season }) => {
         )
       )
     );
-  }, []);
+  }, [season.id]);
 
   return (
       <SeasonWrapper>

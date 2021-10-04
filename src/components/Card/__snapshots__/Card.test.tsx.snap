@@ -2,7 +2,7 @@
 
 exports[`Card renders 1`] = `
 <div
-  className="sc-bdfBQB eQDmeF"
+  className="sc-bdfBQB iVirlX"
 >
   <a
     href="/show/1"
@@ -10,7 +10,7 @@ exports[`Card renders 1`] = `
   >
     <img
       alt="thumbnail"
-      className="sc-gsTEea CMgeu"
+      className="sc-gsTEea jrJljp"
       src="foobar.com/img.jpg"
     />
     <p
