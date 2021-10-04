@@ -1,12 +1,7 @@
 import React from "react";
 import { Wrapper } from "./scrollContainer.styles";
 
-
-type Props = {
-    children?: JSX.Element
-}
-
-export const ScrollContainer = (props: Props) => {
+export const ScrollContainer = (props: {children: React.ReactNode}) => {
     return (
         <Wrapper>
             {props.children}

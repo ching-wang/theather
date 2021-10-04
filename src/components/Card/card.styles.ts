@@ -7,14 +7,13 @@ export const CardWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   box-shadow: ${theme.shadow};
-  width: 250px;
   margin: 10px;
   padding: 20px;
 `;
 
 export const Thumbnail = styled.img`
-  width: 200px;
   padding: 5px;
+  max-width: 100%;
 `;
 
 export const Title = styled.p`

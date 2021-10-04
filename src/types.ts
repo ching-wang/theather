@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ReactElement} from "react";
 
 export type Show = {
   id: number;
@@ -42,8 +42,6 @@ export type Episode = {
 }
 
 export type ReactChangeEvent = React.ChangeEvent<HTMLInputElement>;
-
-export type InputHandler = (event: ReactChangeEvent) => void;
 
 export type SearchResult = {
   score: number;

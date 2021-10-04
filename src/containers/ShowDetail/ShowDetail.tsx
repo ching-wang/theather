@@ -35,7 +35,7 @@ export const ShowDetail = () => {
         </ImageBlock>
         <InfoTextBlock>
           <ShowName>{show?.name}</ShowName>
-          <DescText>{show?.summary}</DescText>
+          <DescText>{String(show?.summary || "").replace(/(<([^>]+)>)/gi, "")}</DescText>
           <InfoText>
             <Text>Cast: {show?.genres}</Text>
             <Text>Status: {show?.status}</Text>

@@ -21,6 +21,11 @@ export const ShowCard = styled.div`
 
 export const ImageBlock = styled.div`
   width: 50%;
+  
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const Poster = styled.img`
@@ -36,6 +41,11 @@ export const InfoTextBlock = styled.div`
   flex-direction: column;
   text-align: left;
   padding: 20px;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const DescText = styled.p`
@@ -69,6 +79,7 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   justify-content: center;
+  align-items: baseline;
 
   @media only screen and (max-width: 600px) {
     grid-template-columns: repeat(1, 1fr);
@@ -97,6 +108,6 @@ export const EpisodeName = styled.p`
 `;
 
 export const Thumbnail = styled.img`
-  width: 200px;
+  max-width: 100%;
   padding: 5px;
 `;
