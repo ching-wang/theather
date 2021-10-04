@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Episode, Season } from "../../types";
 import { apiGet } from "../../api/api";
 import EpisodeDetail from "./EpisodeDetail";
-import {Title, SeasonWrapper} from "./show.styles";
+import {Title, SeasonWrapper, Content} from "./show.styles";
 
 const SeasonDetail = ({ season }: { season: Season }) => {
   const [episodes, setEpisodes] = useState<Array<Episode>>([]);
@@ -19,14 +19,17 @@ const SeasonDetail = ({ season }: { season: Season }) => {
   }, []);
 
   return (
-    <SeasonWrapper>
-      <Title>
-        Season {season.number} {season?.name}
-      </Title>
-      {episodes?.map((episode) => (
-        <EpisodeDetail key={episode.id} episode={episode} />
-      ))}
-    </SeasonWrapper>
+      <SeasonWrapper>
+          <Title>
+              Season {season.number} {season?.name}
+          </Title>
+          <Content>
+              {episodes?.map((episode) => (
+                  <EpisodeDetail key={episode.id} episode={episode} />
+              ))}
+          </Content>
+      </SeasonWrapper>
+
   );
 };
 

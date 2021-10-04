@@ -10,11 +10,13 @@ export const Wrapper = styled.div`
 
 export const ShowCard = styled.div`
   display: flex;
-  height: 400px;
+  min-height: 400px;
   width: 100%;
-  background: lightblue;
-  box-shadow: ${theme.shadow};
   justify-content: space-between;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const ImageBlock = styled.div`
@@ -23,6 +25,7 @@ export const ImageBlock = styled.div`
 
 export const Poster = styled.img`
   width: 300px;
+  padding: 10px;
 `;
 
 export const InfoTextBlock = styled.div`
@@ -55,12 +58,22 @@ export const Text = styled.span`
 
 // Season
 export const SeasonWrapper = styled.div`
+  width: 100%;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  background: antiquewhite;
-  border-bottom: 1px solid purple;
-  margin-bottom: 20px;
+  justify-content: space-between;
 `;
+
+export const Content = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
 
 export const ShowName = styled.p`
   font-size: 4rem;
@@ -70,16 +83,19 @@ export const ShowName = styled.p`
 export const Title = styled.h2`
   font-size: 2rem;
   color: blue;
+  text-align: left;
 `;
 
 // Episode
 export const EpisodeWrapper = styled.div`
-  background: pink;
-  padding: 10px;
-  margin: 5px auto;
+  padding: 2px;
 `;
 
 export const EpisodeName = styled.p`
-  background: aquamarine;
   font-size: 1.5rem;
+`;
+
+export const Thumbnail = styled.img`
+  width: 200px;
+  padding: 5px;
 `;
