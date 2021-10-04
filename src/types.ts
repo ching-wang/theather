@@ -7,8 +7,12 @@ export type Show = {
   genres?: string[];
   language: string;
   runtime: number;
-  rating: object;
+  rating: {
+    average: string
+  };
   number: number;
+  status: string;
+  summary: string;
   image?: {
     medium: string;
     original: string;
