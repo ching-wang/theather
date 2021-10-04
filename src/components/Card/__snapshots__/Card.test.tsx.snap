@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders 1`] = `
+<div
+  className="sc-bdfBQB eQDmeF"
+>
+  <a
+    href="/show/1"
+    onClick={[Function]}
+  >
+    <img
+      alt="thumbnail"
+      className="sc-gsTEea CMgeu"
+      src="foobar.com/img.jpg"
+    />
+    <p
+      className="sc-dlfnuX oYBdS"
+    >
+      foobar
+    </p>
+  </a>
+</div>
+`;

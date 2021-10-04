@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollContainer renders 1`] = `
+<div
+  className="sc-bdfBQB goRYlO"
+>
+  <div>
+    <h1>
+      Hello, world!
+    </h1>
+  </div>
+  <div>
+    <h2>
+      Hi!
+    </h2>
+  </div>
+</div>
+`;
