@@ -3,7 +3,7 @@ import { SearchResult, Show } from "../../types";
 import { useSearchQuery } from "../../context/SearchQueryContext";
 import { apiGet } from "../../api/api";
 import Card from "../../components/Card/Card"
-import { Wrapper } from "./showGrid.styles";
+import {AlertMessage, Grid, SearchTitle, Wrapper} from "./showGrid.styles";
 
 export const ShowGrid = () => {
   const { searchState } = useSearchQuery();
@@ -25,17 +25,18 @@ export const ShowGrid = () => {
   }, [searchState.query]);
 
   return (
-    <>
-      <Wrapper>
-        {searchState.query ? <h2>{searchState.query}</h2> : null}
-        {shows.map((show) => (
+    <Wrapper>
+      {searchState.query ? <SearchTitle>{searchState.query}</SearchTitle> : null}
+      <Grid>
+        {shows && shows.length ? shows.map((show) => (
             <Card
                 key={show.id}
                 show={show}
             />
-        ))}
-      </Wrapper>
-    </>
+        )) : <AlertMessage> No results </AlertMessage>
+        }
+      </Grid>
+    </Wrapper>
   );
 };
 

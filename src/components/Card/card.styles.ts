@@ -7,7 +7,6 @@ export const CardWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   box-shadow: ${theme.shadow};
-  margin: 10px;
   padding: 20px;
 `;
 
