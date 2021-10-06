@@ -4,15 +4,15 @@ import { theme } from "../../styles/GlobalStyles";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background: antiquewhite;
+  background: ${theme.palette.white};
   padding-top: 100px;
 `;
 
 export const ShowCard = styled.div`
   display: flex;
-  min-height: 400px;
   width: 100%;
   justify-content: space-between;
+  padding: 50px;
 
   @media only screen and (max-width: 600px) {
     flex-direction: column;
@@ -20,7 +20,10 @@ export const ShowCard = styled.div`
 `;
 
 export const ImageBlock = styled.div`
-  width: 50%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   @media only screen and (max-width: 600px) {
     flex-direction: column;
@@ -30,14 +33,13 @@ export const ImageBlock = styled.div`
 
 export const Poster = styled.img`
   width: 300px;
-  padding: 10px;
 `;
 
 export const InfoTextBlock = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 50%;
+  width: 60%;
   flex-direction: column;
   text-align: left;
   padding: 20px;
@@ -69,17 +71,21 @@ export const Text = styled.span`
 // Season
 export const SeasonWrapper = styled.div`
   width: 100%;
-  padding: 40px;
+  padding: 10px 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 20px 0px;
+  
 `;
 
 export const Content = styled.div`
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(6, 1fr);
   justify-content: center;
   align-items: baseline;
+  grid-gap: 10px 15px;
 
   @media only screen and (max-width: 600px) {
     grid-template-columns: repeat(1, 1fr);
@@ -88,19 +94,21 @@ export const Content = styled.div`
 
 export const ShowName = styled.p`
   font-size: 4rem;
-  color: ${theme.palette.purple}
+  color: ${theme.palette.black}
 `;
 
 export const Title = styled.h2`
   font-size: 2rem;
-  color: ${theme.palette.purple};
+  color: ${theme.palette.black};
   text-align: left;
 `;
 
 // Episode
 export const EpisodeWrapper = styled.div`
-  padding: 2px;
-  margin: auto 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
 `;
 
 export const EpisodeName = styled.p`
@@ -109,5 +117,4 @@ export const EpisodeName = styled.p`
 
 export const Thumbnail = styled.img`
   max-width: 100%;
-  padding: 5px;
 `;

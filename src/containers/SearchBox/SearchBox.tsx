@@ -8,15 +8,13 @@ import { SearchWrapper, Input} from "./searchBox.styles"
 export const SearchBox = () => {
   const { searchState, dispatchSearch } = useSearchQuery();
 
-  const handleSearchChange = (event: ReactChangeEvent): void => {
-    event.persist();
-    const query = event?.target?.value || "";
-    dispatchSearch({ query });
-  };
-
   const debouncedChangeHandler = useMemo(
-    () => debounce(handleSearchChange, 300),
-    []
+    () => debounce((event: ReactChangeEvent): void => {
+      event.persist();
+      const query = event?.target?.value || "";
+      dispatchSearch({ query });
+    }, 300),
+    [dispatchSearch]
   );
 
   return (
