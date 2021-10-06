@@ -27,8 +27,6 @@ export const ShowDetail = () => {
 
   const imagePlaceHolder = "http://lorempixel.com/210/295/abstract/"
 
-  const genreList = show?.genres?.map((item, index) => <span key={index}> {item} </span>);
-
   return (
     <Wrapper>
       <ShowCard>
@@ -39,7 +37,7 @@ export const ShowDetail = () => {
           <ShowName>{show?.name}</ShowName>
           <DescText>{String(show?.summary || "").replace(/(<([^>]+)>)/gi, "")}</DescText>
           <InfoText>
-            <Text>Genre: {genreList}</Text>
+            <Text>Genre: {show?.genres?.join(", ")}</Text>
             <Text>Status: {show?.status}</Text>
             <Text>Rating: {show?.rating?.average}</Text>
           </InfoText>
