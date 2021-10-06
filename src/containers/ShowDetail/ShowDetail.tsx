@@ -25,19 +25,21 @@ export const ShowDetail = () => {
     apiGet(`/shows/${showId}/seasons`).then((seasons) => setSeasons(seasons));
   }, [showId]);
 
-  console.log("show DETAILS,", show);
+  const imagePlaceHolder = "http://lorempixel.com/210/295/abstract/"
+
+  const genreList = show?.genres?.map((item, index) => <span key={index}> {item} </span>);
 
   return (
     <Wrapper>
       <ShowCard>
         <ImageBlock>
-          <Poster alt="poster" src={show?.image?.medium} />
+          <Poster alt="poster" src={show?.image?.medium || imagePlaceHolder} />
         </ImageBlock>
         <InfoTextBlock>
           <ShowName>{show?.name}</ShowName>
           <DescText>{String(show?.summary || "").replace(/(<([^>]+)>)/gi, "")}</DescText>
           <InfoText>
-            <Text>Cast: {show?.genres}</Text>
+            <Text>Genre: {genreList}</Text>
             <Text>Status: {show?.status}</Text>
             <Text>Rating: {show?.rating?.average}</Text>
           </InfoText>

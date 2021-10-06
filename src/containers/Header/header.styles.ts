@@ -1,10 +1,10 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import {theme} from "../../styles/GlobalStyles";
 
 export const HeaderWrapper = styled.div`
-  background: black;
-  color: white;
+  background: ${theme.palette.bgColor};
   width: 100%;
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,6 +17,6 @@ export const HeaderWrapper = styled.div`
 
 
 export const CompanyName = styled.h1`
-    color: white;
+    color: ${theme.palette.red};
     font-size: 3.8rem;
 `

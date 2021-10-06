@@ -14,7 +14,7 @@ exports[`Card renders 1`] = `
       src="foobar.com/img.jpg"
     />
     <p
-      className="sc-dlfnuX oYBdS"
+      className="sc-dlfnuX fjUyWf"
     >
       foobar
     </p>

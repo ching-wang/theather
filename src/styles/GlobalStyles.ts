@@ -1,56 +1,57 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const theme = {
- palette: {
-  default: "#000000",
-  black: "#000000",
-  white: "#ffffff",
-  grey: "#E5E5E5",
-  purple: "#7F00FF",
+  palette: {
+    default: "#000000",
+    black: "rgb(20, 20, 20)",
+    white: "#ffffff",
+    grey: "#E5E5E5",
+    red: "#e50914",
+    bgColor: "rgba(0, 0, 0, 0.9)"
+  },
 
- },
-
- shadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
-
+  shadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
 };
 
-const GlobalStyles = createGlobalStyle( props => {
- const windowSizes = {
-  width: "100%",
-  height: "100%",
- };
+const GlobalStyles = createGlobalStyle(() => {
+  const windowSizes = {
+    width: "100%",
+    height: "100%",
+  };
 
- return {
-  "*": {
-   boxSizing: "border-box",
-   margin: "0",
-   padding: "0",
+  return {
+    "*": {
+      boxSizing: "border-box",
+      margin: "0",
+      padding: "0",
 
-   "&:focus": {
-    outline: "none",
-   }
+      "&:focus": {
+        outline: "none",
+      },
+    },
 
-  },
+    html: {
+      ...windowSizes,
+      fontSize: "62.5%",
+    },
 
-  html: {
-   ...windowSizes,
-   fontSize: "62.5%",
-  },
+    body: {
+      ...windowSizes,
 
-  body: {
-   ...windowSizes,
-  },
+      a: {
+        color: theme.palette.black,
+        textDecoration: "none"
+      },
+    },
 
-  "#root": {
-   ...windowSizes,
+    "#root": {
+      ...windowSizes,
 
-   "& > *": {
-    backgroundColor: theme.palette.white,
-   },
-  }
-
- }
+      "& > *": {
+        backgroundColor: theme.palette.white,
+      },
+    },
+  };
 });
 
 export default GlobalStyles;
