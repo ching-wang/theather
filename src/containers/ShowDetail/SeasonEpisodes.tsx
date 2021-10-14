@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Episode, Season } from "../../types";
 import { apiGet } from "../../api/api";
-import EpisodeDetail from "./EpisodeDetail";
+import EpisodeLink from "./EpisodeLink";
 import {Title, SeasonWrapper, Content} from "./show.styles";
 
-const SeasonDetail = ({ season }: { season: Season }) => {
+type Params = {
+    season: Season,
+    showId: string,
+}
+
+const SeasonEpisodes = ({season, showId} : Params) => {
   const [episodes, setEpisodes] = useState<Array<Episode>>([]);
 
   useEffect(() => {
@@ -25,7 +30,12 @@ const SeasonDetail = ({ season }: { season: Season }) => {
           </Title>
           <Content>
               {episodes?.map((episode) => (
-                  <EpisodeDetail key={episode.id} episode={episode} />
+                  <EpisodeLink
+                      key={episode.id}
+                      episode={episode}
+                      showId={String(showId)}
+                      seasonId={String(season.id)}
+                  />
               ))}
           </Content>
       </SeasonWrapper>
@@ -33,4 +43,4 @@ const SeasonDetail = ({ season }: { season: Season }) => {
   );
 };
 
-export default SeasonDetail;
+export default SeasonEpisodes;

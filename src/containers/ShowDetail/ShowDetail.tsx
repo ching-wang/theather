@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Season, Show } from "../../types";
 import { apiGet } from "../../api/api";
-import SeasonDetail from "./SeasonDetail";
+import SeasonEpisodes from "./SeasonEpisodes";
 import {
   Wrapper,
   ShowName,
@@ -44,7 +44,7 @@ export const ShowDetail = () => {
         </InfoTextBlock>
       </ShowCard>
       {seasons?.map((season) => (
-        <SeasonDetail key={season.id} season={season} />
+        <SeasonEpisodes key={season.id} season={season} showId={showId}/>
       ))}
     </Wrapper>
   );
