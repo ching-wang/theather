@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { apiGet } from "../../api/api";
 import { Link } from "react-router-dom";
-import {Episode} from "../../types";
-import ScrollContainer from "../../components/ScrollContainer/ScrollContainer";
+import { Episode } from "../../types";
 import {Thumbnail} from "../../components/Card/card.styles";
 
 export const EpisodeDetail = () => {
