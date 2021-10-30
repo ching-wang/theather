@@ -1,12 +1,16 @@
 import React from "react";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import ShowGrid from "../ShowGrid/ShowGrid";
 import ScrollContainer from "../../components/ScrollContainer/ScrollContainer";
 
+
 export const MainPage = () => {
     return(
-        <ScrollContainer>
-            <ShowGrid />
-        </ScrollContainer>
+        <ErrorBoundary>
+            <ScrollContainer>
+                <ShowGrid />
+            </ScrollContainer>
+        </ErrorBoundary>
     )
 };
 
