@@ -10,8 +10,6 @@ export const EpisodeDetail = () => {
     useParams<{ episodeId: string; showId: string }>();
   const [episode, setEpisode] = useState<Episode>();
 
-  console.log(episode);
-
   useEffect(() => {
     apiGet(`/episodes/${episodeId}`).then((episode) => setEpisode(episode));
   }, [episodeId]);
